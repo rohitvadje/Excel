@@ -1,0 +1,4 @@
+exports.activityBean =  {
+		"id" : "",
+		"name" : ""
+};

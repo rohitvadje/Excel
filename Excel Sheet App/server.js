@@ -94,6 +94,11 @@ app.get('/getSampleReportBean',function(req,res){
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(rptBn)); 
 });
+app.get('/getSampleEmployeeBean',function(req,res){
+	var employee = require('./modules/Beans/employeeBean');
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(employee)); 
+});
 //Developer Note : Change port settings  
 app.listen(3000, function () {
     console.log('Excel app listening on port 3000!')

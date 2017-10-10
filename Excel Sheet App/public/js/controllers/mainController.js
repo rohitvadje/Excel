@@ -1,3 +1,4 @@
+
 effortsTrack.controller('mainController', function ($scope) {
     $scope.sprintList = sprintData;
     $scope.activityList = activityData;

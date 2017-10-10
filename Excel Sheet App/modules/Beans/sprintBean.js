@@ -1,0 +1,4 @@
+exports.sprintBean = {
+		"id" : "",
+		"name" : ""
+}
