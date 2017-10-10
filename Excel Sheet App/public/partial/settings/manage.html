@@ -1,0 +1,33 @@
+<center>
+    <div class="container">
+        <div class="alert alert-info">
+            <h5>Manage Application</h5>
+        </div>
+    </div>
+    <form id="manageApp" name="manageApp">
+        <table id="manageApp" name="manageApp">
+            <thead>
+                    <tr>
+                        <th>Options</th>
+                        <th>Preferences</th>
+                    </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>Select Manager</td>
+                        <td><select class="form-control" id="settingPageManager" name="settingPageManager" ng-model="settingPageManager">
+                            <option ng-repeat="a in managers">{{a}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info" id="settingPageAddManager" name="settingPageAddManager" ng-model="settingPageAddManager" ng-click="addManager()">+ Add Manager </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Select Mail Time</td>
+                        <td><input class="form-control" type="datetime-local" id="settingPageDateTimeLocal" name="settingPageDateTimeLocal" ng-model="settingPageDateTimeLocal"></td>
+                    </tr>
+            </tbody>
+        </table>
+    </form>
+</center>

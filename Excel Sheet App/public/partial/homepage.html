@@ -1,0 +1,58 @@
+<div id="homepage" ng-form="mainForm"  ng-controller="mainController">
+    <table id="userFormTable" class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Date
+                    <font color="red">*</font>
+                </th>
+                <th>Name
+                    <font color="red">*</font>
+                </th>
+                <th>Sprint
+                    <font color="red">*</font>
+                </th>
+                <th>User Story
+                    <font color="red">*</font>
+                </th>
+                <th>Activity
+                    <font color="red">*</font>
+                </th>
+                <th>Efforts Spent
+                    <font color="red">*</font>
+                </th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="a in tableRows.data" >
+            <td><input type="checkbox" style="margin-top:50%"  id={{$index}} ng-model="a.rowid" data-ng-change="clickAction({{$index}})"></td>
+            <td><input type="date" class="form-control" name="date" id="date" ng-model="date"></td>
+            <td><input type="text" class="form-control" name="name" id="name" ng-model="name"></td>
+            <td>
+                <select name="sprint" id="sprint" class="dropdown btn btn-default dropdown-toggle" ng-model="sprint">
+                             <option ng-repeat="a in sprintList">{{a}}</option>
+                </select>
+            </td>
+            <td><input type="text" class="form-control" name="userStory" id="userStory" ng-model="userStory"></td>
+            <td>
+                <select id="activity" name="activity" class="dropdown btn btn-default dropdown-toggle" ng-model="activity">
+                             <option ng-repeat="a in activityList">{{a}}</option>
+                </select>
+            </td>
+            <td>
+                <input type="number" class="form-control" name="effortsSpent" id="effortsSpent" ng-model="effortsSpent">
+            </td>
+            <td><input type="text" class="form-control" name="comments" id="comments" ng-model="comments"></td>
+        </tr>
+    </table>
+    <center>
+        <div id="addRemoveTask">
+            <button type="button" class="btn btn-info" ng-click="addTask()">Add</button>
+            <button type="button" class="btn btn-warning" ng-click="deleteTask()">Remove</button>
+        </div>
+        <br>
+        <div id="submitTasks">
+            <button type="button" class="btn btn-success" id="submitTasksButton" ng-click="submitTasks()">Submit</button>
+        </div>
+    </center>
+</div>

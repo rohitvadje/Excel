@@ -1,0 +1,25 @@
+<center>
+    <div class="container">
+        <h5 class="alert alert-success container">Add new member</h5>
+        <form id="newMemberForm" name="newMemberForm">
+            <table class="table">
+                <tr>
+                    <td>Name</td>
+                    <td> <input class="form-control" id="newUserName" type="text" min="5" max="100" maxlength="100" ng-model="addNewMember.Name" required></td>
+                </tr>
+                <tr>
+                    <td>Surname</td>
+                    <td> <input class="form-control" id="newUserSurname" type="text" min="5" max="100" maxlength="100" ng-model="addNewMember.Surname" required></td>
+                </tr>
+                <tr>
+                    <td>CEC</td>
+                    <td><input class="form-control" id="newUserCEC" type="text" min="1" max="15" maxlength="15" ng-model="addNewMember.CEC" required></td>
+                </tr>
+                <tr>
+                    <td>Birthdate</td>
+                    <td><input class="form-control" id="newUserBirthdate" name="newUserBirthdate" type="date" ng-model="addNewMember.Birthdate" required></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</center>

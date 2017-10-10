@@ -1,0 +1,22 @@
+var activityData =  [
+    "Sprint Planning",
+    "Status Reporting",
+    "Defect Fixing",
+    "Rally Tasks",
+    "Ideal Time",
+    "Internal Communication",
+    "Meeting - External",
+    "Meeting - Internal",
+    "Other",
+    "User Story Work",
+    "Defect Review Meeting",
+    "Requirement Understanding",
+    "Sprint Daily Standup Meeting",
+    "Backlog Grooming Meeting",
+    "Environment Setup",
+    "Deployment Activity",
+    "LAE Issues",
+    "Cross Team Interaction",
+    "Initiative Activity",
+    "Support Case Fixing"
+];

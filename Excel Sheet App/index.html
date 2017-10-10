@@ -1,0 +1,38 @@
+<html ng-app="effortsTrack">
+
+<head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Efforts Tracking</title>
+    <script src="public/js/lib/angular.min.js"></script>
+    <script src="public/js/lib/angular-route.min.js"></script>
+    <script src="public/js/lib/jquery.min.js"></script>
+    <script src="public/js/lib/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="public/js/scripts/sprintData.js"></script>
+    <script src="public/js/scripts/activityData.js"></script>
+    <script src="public/js/lib/lodash.min.js"></script>
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+</head>
+
+<body>
+    <center>
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <span>
+                <h1>Efforts Tracking</h1>
+                <p><a href="#!/manage">Settings</a></p>
+                </span>
+            </div>
+        </div>
+    </center>
+    <div ng-view>
+    </div>
+    <script src="public/js/controllers/mainController.js"></script>
+    <script src="public/js/controllers/manageSettingsController.js"></script>
+</body>
+
+</html>
