@@ -1,5 +1,6 @@
 exports.projectProperties = {
-	"password" : "", 
-	"database_name" : "",
-	"host" : ""
+		host: "localhost",
+		user: "roor",
+		password: "root",
+		database: "excelapp"
 };
