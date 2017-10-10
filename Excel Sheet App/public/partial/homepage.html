@@ -27,7 +27,11 @@
         <tr ng-repeat="a in tableRows.data" >
             <td><input type="checkbox" style="margin-top:50%"  id={{$index}} ng-model="a.rowid" data-ng-change="clickAction({{$index}})"></td>
             <td><input type="date" class="form-control" name="date" id="date" ng-model="date"></td>
-            <td><input type="text" class="form-control" name="name" id="name" ng-model="name"></td>
+            <td>
+            	<select name="name" class="dropdown btn btn-default dropdown-toggle" name="name" id="name" ng-model="name">
+            		<option ng-repeat="a in employeenames">{{a}}</option>
+            	</select>
+            </td>
             <td>
                 <select name="sprint" id="sprint" class="dropdown btn btn-default dropdown-toggle" ng-model="sprint">
                              <option ng-repeat="a in sprintList">{{a}}</option>
