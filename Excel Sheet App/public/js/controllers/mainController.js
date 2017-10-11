@@ -11,7 +11,6 @@ effortsTrack.controller('mainController', function ($scope) {
             {
                 "rowid": $scope.rowCount,
                 "date": "",
-                "name": "",
                 "sprint": "",
                 "userStory": "",
                 "activity": "",
@@ -22,22 +21,27 @@ effortsTrack.controller('mainController', function ($scope) {
     };
     var index = 0;
     $scope.addTask = function addTask() { //Developer Note : Adding task to existing array 
-        ++index;
-        var newTaskObject = {
-            "rowid": index,
-            "date": "",
-            "name": "",
-            "sprint": "",
-            "userStory": "",
-            "activity": "",
-            "effortsSpent": "",
-            "comments": ""
-        };
-        $scope.tableRows.data.push(newTaskObject);
-    };
+    	if($scope.taskForm.$invalid){
+    		alert("Fill all details in current task");
+    	}
+    	else{
+    		++index;
+            var newTaskObject = {
+                "rowid": index,
+                "date": "",
+                "sprint": "",
+                "userStory": "",
+                "activity": "",
+                "effortsSpent": "",
+                "comments": ""
+            };
+            $scope.tableRows.data.push(newTaskObject);
+
+    	}
+  };
 
     // Developer Note : For every checkbox click, add or remove entries from selected tasks accordingly
-    // If entry N exists , it means user have selectes N'th task and otherwise push to selected task
+    // If entry N exists , it means user have selected N'th task and otherwise push to selected task
     $scope.clickAction = function clickAction(id) {
         var existFlag = false;
         $scope.selectedTasks.forEach(function (element) {

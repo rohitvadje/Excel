@@ -1,18 +1,11 @@
-const express = require("express");
-const app = express();
-const path = require("path");
-const fs = require("fs");
-const xlsx = require("xlsx");
-//MongoDB
-const mongocli = require("mongo-client");
-var uuid = require("node-uuid")
-var assert = require("assert")
-var fold = require("reducers/fold")
-var expand = require("reducers/expand")
-var mongo = require("mongo-client")
-var insert = require("mongo-client/insert")
-var findOne = require("mongo-client/findOne")
-var close = require("mongo-client/close")
+var express = require("express");
+var app = express();
+var path = require("path");
+var fs = require("fs");
+var xlsx = require("xlsx");
+
+app.use(express.static(__dirname + '/public'));
+console.log(__dirname);
 
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();

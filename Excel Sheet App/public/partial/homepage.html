@@ -1,52 +1,55 @@
 <div id="homepage" ng-form="mainForm"  ng-controller="mainController">
-    <table id="userFormTable" class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Date
-                    <font color="red">*</font>
-                </th>             
-                <th>Sprint
-                    <font color="red">*</font>
-                </th>
-                <th>User Story
-                    <font color="red">*</font>
-                </th>
-                <th>Activity
-                    <font color="red">*</font>
-                </th>
-                <th>Efforts Spent
-                    <font color="red">*</font>
-                </th>
-                <th>Comments</th>
-            </tr>
-        </thead>
-        <tr ng-repeat="a in tableRows.data" >
-            <td><input type="checkbox" style="margin-top:50%"  id={{$index}} ng-model="a.rowid" data-ng-change="clickAction({{$index}})"></td>
-            <td><input type="date" class="form-control" name="date" id="date" ng-model="date"></td>
-            <td>
-                <select name="sprint" id="sprint" class="dropdown btn btn-default dropdown-toggle" ng-model="sprint">
-                             <option ng-repeat="a in sprintList">{{a}}</option>
-                </select>
-            </td>
-            <td><input type="text" class="form-control" name="userStory" id="userStory" ng-model="userStory"></td>
-            <td>
-                <select id="activity" name="activity" class="dropdown btn btn-default dropdown-toggle" ng-model="activity">
-                             <option ng-repeat="a in activityList">{{a}}</option>
-                </select>
-            </td>
-            <td>
-                <input type="number" class="form-control" name="effortsSpent" id="effortsSpent" ng-model="effortsSpent">
-            </td>
-            <td><input type="text" class="form-control" name="comments" id="comments" ng-model="comments"></td>
-        </tr>
-    </table>
-    <center>
-        <div id="bottomButtons">
-            <button type="button" class="btn btn-success" ng-click="addTask()">Add task</button>
-            <button type="button" class="btn btn-danger" ng-click="deleteTask()">Remove task</button>
-            <button type="button" class="btn btn-warning" id="submitTasksButton" ng-click="submitTasks()">Submit all</button>
-            <button type="button" class="btn btn-info" ng-click="">Send all to manager</button>
-        </div>
-    </center>
+		<form name="taskForm">
+			<table id="userFormTable" class="table">
+	        <thead>
+	            <tr>
+	                <th></th>
+	                <th>Date
+	                    <font color="red">*</font>
+	                </th>             
+	                <th>Sprint
+	                    <font color="red">*</font>
+	                </th>
+	                <th>User Story
+	                    <font color="red">*</font>
+	                </th>
+	                <th>Activity
+	                    <font color="red">*</font>
+	                </th>
+	                <th>Efforts Spent
+	                    <font color="red">*</font>
+	                </th>
+	                <th>Comments</th>
+	            </tr>
+	        </thead>
+	        <tr ng-repeat="a in tableRows.data" >
+	            <td><input type="checkbox" style="margin-top:50%"  id={{$index}} ng-model="a.rowid" data-ng-change="clickAction({{$index}})"></td>
+	            <td><input type="date" class="form-control" name="date" id="date" ng-model="date" required="required"></td>
+	            <td>
+	                <select name="sprint" id="sprint" class="dropdown btn btn-default dropdown-toggle" ng-model="sprint" required="required">
+	                             <option ng-repeat="a in sprintList">{{a}}</option>
+	                </select>
+	            </td>
+	            <td><input type="text" class="form-control" name="userStory" id="userStory" ng-model="userStory" required="required"></td>
+	            <td>
+	                <select id="activity" name="activity" class="dropdown btn btn-default dropdown-toggle" ng-model="activity" required="required">
+	                             <option ng-repeat="a in activityList">{{a}}</option>
+	                </select>
+	            </td>
+	            <td>
+	                <input type="number" class="form-control" name="effortsSpent" id="effortsSpent" ng-model="effortsSpent" required="required">
+	            </td>
+	            <td><input type="text" class="form-control" name="comments" id="comments" ng-model="comments"></td>
+	        </tr>
+	    </table>
+	    <center>
+	        <div id="bottomButtons">
+	            <button type="button" class="btn btn-success" ng-click="addTask()">Add task</button>
+	            <button type="button" class="btn btn-danger" ng-click="deleteTask()">Remove task</button>
+	            <button type="button" class="btn btn-warning" id="submitTasksButton" ng-click="submitTasks()">Submit all</button>
+	            <button type="button" class="btn btn-info" ng-click="">Send all to manager</button>
+	            <button type="button" class="btn btn-default" ng-click>Delete All</button>
+	        </div>
+   		</center>
+	</form>
 </div>
