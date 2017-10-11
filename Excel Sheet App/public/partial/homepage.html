@@ -42,13 +42,11 @@
         </tr>
     </table>
     <center>
-        <div id="addRemoveTask">
-            <button type="button" class="btn btn-info" ng-click="addTask()">Add</button>
-            <button type="button" class="btn btn-warning" ng-click="deleteTask()">Remove</button>
-        </div>
-        <br>
-        <div id="submitTasks">
-            <button type="button" class="btn btn-success" id="submitTasksButton" ng-click="submitTasks()">Submit</button>
+        <div id="bottomButtons">
+            <button type="button" class="btn btn-success" ng-click="addTask()">Add task</button>
+            <button type="button" class="btn btn-danger" ng-click="deleteTask()">Remove task</button>
+            <button type="button" class="btn btn-warning" id="submitTasksButton" ng-click="submitTasks()">Submit all</button>
+            <button type="button" class="btn btn-info" ng-click="">Send all to manager</button>
         </div>
     </center>
 </div>

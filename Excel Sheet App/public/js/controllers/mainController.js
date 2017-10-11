@@ -52,13 +52,18 @@ effortsTrack.controller('mainController', function ($scope) {
     };
 
     $scope.deleteTask = function deleteTask() {
-        $scope.selectedTasks.forEach(function (element) {
-            _.remove($scope.tableRows.data, function (row) {
-                if (row.rowid == element) {
-                    return row;
-                }
+    	if($scope.selectedTasks.length==0){
+    		alert("Select a task to delete");
+    	}
+    	else{
+    		$scope.selectedTasks.forEach(function (element) {
+                _.remove($scope.tableRows.data, function (row) {
+                    if (row.rowid == element) {
+                        return row;
+                    }
+                });
             });
-        });
+    	}
     };
 });
 
