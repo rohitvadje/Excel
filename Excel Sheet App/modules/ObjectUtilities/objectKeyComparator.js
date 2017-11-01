@@ -6,7 +6,5 @@
  */
 
 exports.objectKeysComparator = function compareKeys(a, b) {
-  var aKeys = Object.keys(a).sort();
-  var bKeys = Object.keys(b).sort();
-  return JSON.stringify(aKeys) === JSON.stringify(bKeys);
+  return JSON.stringify(Object.keys(a).sort()) === JSON.stringify(Object.keys(b).sort());
 }

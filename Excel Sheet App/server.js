@@ -3,6 +3,7 @@ var app = express();
 var path = require("path");
 var fs = require("fs");
 var xlsx = require("xlsx");
+var _ = require('lodash');
 
 app.use(express.static(__dirname + '/public'));
 console.log(__dirname);
@@ -11,6 +12,7 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var rptBn = require('./modules/Beans/reportBean');
 var objKeyCompare = require('./modules/ObjectUtilities/objectKeyComparator');
+var invalidObj = require('modules/ObjectUtilities/invalidObject');
 
 //Developer Note : Homepage redirect
 app.get('/', function (req, res) {
@@ -60,7 +62,7 @@ app.post('/sendEmail', function (req, res) {
 
 app.post('/submitSheet',jsonParser,function(req,res){
     res.setHeader('Content-Type', 'application/json');
-     if (!req.body){
+    /*if (!req.body){
         res.send(JSON.stringify({'Error':'No input detected!'}));
      } 
     else if(req.body==null){
@@ -71,11 +73,13 @@ app.post('/submitSheet',jsonParser,function(req,res){
     }
     else if(req.body==''){
         res.send(JSON.stringify({'Error':'Empty input'}));
+    }*/
+    if(invalidObj(req.body)){
+    	res.send(JSON.stringify({'Error':'Invalid Object'}));
     }
-    else{
-        //res.send(JSON.stringify(objKeyCompare.objectKeysComparator(req.body,rptBn)));     
+    else{     
         if(objKeyCompare.objectKeysComparator(req.body,rptBn)){
-            //res.send(JSON.stringify({'Error':'Valid input'}));
+            res.send(JSON.stringify({'Info':'Valid input'}));
         }
         else{
             res.send(JSON.stringify({'Error':'Invalid input'}));
@@ -87,11 +91,13 @@ app.get('/getSampleReportBean',function(req,res){
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(rptBn)); 
 });
+
 app.get('/getSampleEmployeeBean',function(req,res){
 	var employee = require('./modules/Beans/employeeBean');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(employee)); 
 });
+
 //Developer Note : Change port settings  
 app.listen(3000, function () {
     console.log('Excel app listening on port 3000!')
